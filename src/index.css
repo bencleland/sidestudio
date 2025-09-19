@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+
+/* Hero + Intake animated dot background */
+@keyframes dot-drift {
+  0% { background-position: 0 0, 0 0; }
+  50% { background-position: 12px 12px, 0 0; }
+  100% { background-position: 0 0, 0 0; }
+}
+.animate-dot-drift { animation: dot-drift 20s linear infinite; }
+
+/* Neon button glow */
+.hover\:shadow-neon:hover {
+  box-shadow: 0 0 10px rgba(255, 216, 0, 0.8),
+              0 0 20px rgba(255, 216, 0, 0.6),
+              0 0 30px rgba(255, 216, 0, 0.4);
+}
+
+/* Fade-in upward */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity .3s ease-out, transform .3s ease-out; }
+.fade-in-up.animate { animation: fadeInUp 1.2s ease-out forwards; }
+
+/* Custom dropdown arrow */
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='yellow' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+}
